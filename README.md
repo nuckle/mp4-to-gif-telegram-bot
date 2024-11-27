@@ -1,10 +1,11 @@
 # mp4-to-gif-telegram-bot
+
 Can convert .mp4 to .gif
 
 ## Requirements
 
-* FFmpeg
-* Python 3.6+
+* `FFmpeg`
+* `Python` 3.6+
 
 ## Installation
 

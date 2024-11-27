@@ -21,7 +21,7 @@ router = Router()
 bot = Bot(TG_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
 
 
-async def convert_video(file_path, file_id):
+async def convert_video(file_path: str, file_id: str):
     """
     Downloads and converts .mp4 to .mp3
     """
