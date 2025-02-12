@@ -1,0 +1,9 @@
+services:
+  bot:
+    build:
+      dockerfile: Dockerfile
+    stop_signal: SIGINT
+    env_file: .env
+    restart: unless-stopped
+    # Optionally mount your media directory
+    # - "/your/path/to/media:/app/your/path/to/media"
