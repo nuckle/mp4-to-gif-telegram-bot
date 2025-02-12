@@ -1,4 +1,5 @@
 import logging
+import os
 import sys
 import asyncio
 
@@ -19,6 +20,11 @@ from config import TG_TOKEN, FOLDER, GIF_PARAMS
 dp = Dispatcher()
 router = Router()
 bot = Bot(TG_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
+
+
+def create_dir(directory_path: str):
+    if not os.path.exists(directory_path):
+        os.makedirs(directory_path)
 
 
 async def convert_video(file_path: str, file_id: str):
@@ -70,6 +76,9 @@ async def send_gif(message: types.Message):
 async def main() -> None:
     dp.include_router(router)
     # And the run events dispatching
+
+    create_dir(FOLDER)
+
     await dp.start_polling(bot)
 
 
